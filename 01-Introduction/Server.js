@@ -2,6 +2,9 @@
 const express = require('express')
 const app = express()
 
+const bodyParser = require('body-parser')
+app.use(bodyParser.json())
+
 
 // Get Request  for the Home page
 app.get('/', (req,res) => {
@@ -20,20 +23,23 @@ app.get('/contact', (req,res) => {
     res.send("This is the response for the Contact Page:")
 })
 
-// Handling the requests other than the routes
-app.use( (req,res) => {
-    res.status(404).send("Page Not Found: ")
-})
 
 
 // Post Request for Submitting or adding the data
 app.post('/api/cars' , (req,res) => {
     const {carName, carBrand} = req.body
-    console.log(carName)
-    console.log(carBrand)
+    console.log('Car Name : ',carName)
+    console.log('Car Brand : ',carBrand)
     res.send("Car Data submitted successfully.")
 })
 
+
+
+
+// Handling the requests other than the routes
+app.use( (req,res) => {
+    res.status(404).send("Page Not Found: ")
+})
 
 
 // Server Listening
