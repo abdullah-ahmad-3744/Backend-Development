@@ -32,8 +32,14 @@ app.post('/api/cars' , (req,res) => {
     console.log('Car Brand : ',carBrand)
     res.send("Car Data submitted successfully.")
 })
-
-
+// Post request for submitting a student dat
+app.post('/students/std1', (req,res) => {
+    const {studentName, studentRollNum, studentAddress} = req.body
+    console.log("Student Name = ", studentName);
+    console.log("Student Roll No. = ", studentRollNum);
+    console.log("Student Address = ", studentAddress)
+    res.send("Student data submitted successfully:")
+})
 
 
 // Handling the requests other than the routes
