@@ -26,6 +26,15 @@ app.use( (req,res) => {
 })
 
 
+// Post Request for Submitting or adding the data
+app.post('/api/cars' , (req,res) => {
+    const {carName, carBrand} = req.body
+    console.log(carName)
+    console.log(carBrand)
+    res.send("Car Data submitted successfully.")
+})
+
+
 
 // Server Listening
 app.listen(3000, ()=> {
