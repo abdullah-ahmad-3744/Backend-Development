@@ -20,6 +20,11 @@ app.get('/contact', (req,res) => {
     res.send("This is the response for the Contact Page:")
 })
 
+// Handling the requests other than the routes
+app.use( (req,res) => {
+    res.status(404).send("Page Not Found: ")
+})
+
 
 
 // Server Listening
