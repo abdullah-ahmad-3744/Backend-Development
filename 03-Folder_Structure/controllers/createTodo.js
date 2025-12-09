@@ -1,7 +1,8 @@
-const todoSchema = require('../models/todoSchema')
+// const todoSchema = require('../models/todoSchema')
+import todoSchema from "../models/todoSchema.js"
 
 
-exports.createTodo = async (req,res) => {
+export const createTodo = async (req,res) => {
     try {
         // Extracting data from the request body
         const {title, description} = req.body

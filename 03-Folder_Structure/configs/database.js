@@ -1,11 +1,12 @@
-const mongoose = require('mongoose')
-require('dotenv').config()
+// const mongoose = require('mongoose')
+import mongoose from 'mongoose'
+// require('dotenv').config()
+import dotenv from "dotenv";
+dotenv.config();
 
 
-const connectDB = () => {
-    mongoose.connect(process.env.DATABASE_URL,{
-        useNewUrlParser:true,
-        useUnifiedTopology:true
+export const connectDB = () => {
+    mongoose.connect('mongodb://127.0.0.1:27017/demoDatabase',{
     } )
 .then( () => {
     console.log("Database connected successfully")
@@ -16,4 +17,3 @@ const connectDB = () => {
     process.exit(1)
 })
 }
-module.exports = connectDB
