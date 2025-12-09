@@ -2,6 +2,9 @@
 const express = require('express')
 const app = express()
 
+// Mongoose for DB connection
+const mongoose = require('mongoose')
+
 // Body parser 
 const bodyParser = require('body-parser')
 app.use(bodyParser.json())
@@ -52,4 +55,14 @@ app.use( (req,res) => {
 // Server Listening
 app.listen(3000, ()=> {
     console.log('Server is listening on the port 3000')
+})
+
+
+// Conntecting DB to node and express
+mongoose.connect('mongodb://localhost:27017/collegeDatabase')
+.then(() => {
+    console.log("DB connected successfully:")
+})
+.catch((error) => {
+    console.log('Error in connecting DB = ', error)
 })
