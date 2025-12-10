@@ -5,10 +5,10 @@ import createUserController from '../controllers/createUserController.js'
 
 
 // creating a Router from the express
-const Router = express.Router()
+const router = express.Router()
 
-Router.post ('/createUser', createUserController)
+router.post ('/createUser', createUserController)
 
 // exporting the Router
-export default Router;
+export default router;
 

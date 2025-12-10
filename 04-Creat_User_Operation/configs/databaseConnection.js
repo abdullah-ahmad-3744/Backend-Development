@@ -1,5 +1,5 @@
 // importing mongoose for db connection
-import mongoose, { mongo } from "mongoose";
+import mongoose from "mongoose";
 
 
 // Import env for the Database url uasge from the .env file
@@ -10,7 +10,7 @@ const DATABASE_URL = process.env.DATABASE_URL
 
 // creating a connection using the mongoose
 export const connectDB = () => {
-    mongoose.connect(DATABASE_URL, )
+    mongoose.connect(DATABASE_URL)
 .then( () => {
     console.log("Database connected successfully:")
 })

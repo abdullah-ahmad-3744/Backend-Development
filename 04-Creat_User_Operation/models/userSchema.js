@@ -1,21 +1,23 @@
 // importing mongoose for creating the schema of a user
 import mongoose from "mongoose";
 
-export const userSchema = new mongoose.Schema (
+const userSchema = new mongoose.Schema (
     {
-        fistName : {
+        firstName:{
             type: String,
             required : true,
             maxLength: 50,
         },
-        lastName : {
+        lastName:{
             type : String,
             required : true,
             maxLength : 50,
         },
-        email : {
+        email:{
             type : String,
             required : true
         }
     }
 )
+
+export const User = mongoose.model('User', userSchema)
