@@ -21,18 +21,15 @@ app.use(express.json())
 // Mapping the API request with the route 
 app.use('/api', createuserRoute)
 
-
-
-
-
-app.listen(PORT, () => {
-    console.log(`App is listening on PORT: ${PORT}`)
-})
-
 // Connecting DB 
 connectDB()
 
 // Default route for the App
 app.get('/', (req,res) => {
     res.send('<h1>This is Home Page</h1>')
+})
+
+
+app.listen(PORT, () => {
+    console.log(`App is listening on PORT: ${PORT}`)
 })
