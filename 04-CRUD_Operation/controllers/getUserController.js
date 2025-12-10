@@ -1,7 +1,7 @@
 import mongoose from "mongoose"
 import { User } from "../models/userSchema.js"
 
-const getUserController = async (req,res) => {
+export const getAllUserController = async (req,res) => {
     try {
         // Fetching all the users from the DB 
         const allUsers = await User.find({})
@@ -25,4 +25,38 @@ const getUserController = async (req,res) => {
         )
     }
 }
-export default getUserController
+
+
+export const getUserById = async (req,res) => {
+    try {
+        const id = req.params.id
+        const userById = await User.findById({_id: id})
+        // if data not found 
+        if (!userById) {
+            return res.status(404).json(
+                {
+                    success:false,
+                    message: 'No Data Found'
+                }
+            )
+        }
+        // If Data found 
+        res.status(200).json(
+            {
+                success : true,
+                data : userById,
+                message : 'Fetched a user by Id: '
+            }
+        )
+    } catch (error) {
+        console.log(error.message)
+        console.error(error.message)
+        res.status(500).json(
+            {
+                success: false,
+                data : 'Error in fetching user by Id: ',
+                message : 'Internal Server Error :'
+            }
+        )
+    }
+}
