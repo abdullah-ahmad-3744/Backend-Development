@@ -8,7 +8,8 @@ const createUserController = async (req,res) => {
         const {firstName, lastName , email} = req.body
         // creating a new object from the schema and with the data from request body
         const response =  await User.create({firstName, lastName, email})
-        console.log(`User successfully saved in DB : `, response)
+        // console.log(`User successfully saved in DB : `, response)
+
         res.status(200).json(
             {
                 success : true,
