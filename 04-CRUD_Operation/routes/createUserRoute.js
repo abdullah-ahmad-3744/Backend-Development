@@ -17,7 +17,7 @@ const router = express.Router()
 router.post ('/createUser', createUserController)
 router.get( '/getUsers', getAllUserController)
 router.get('/getUsers/:id', getUserById)
-router.put('/updatedUser/:id',updateUserController)
+router.put('/updateUser/:id',updateUserController)
 router.delete('/deleteUser/:id', deleteUserController)
 
 

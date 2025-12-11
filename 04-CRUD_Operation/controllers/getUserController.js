@@ -1,4 +1,3 @@
-import mongoose from "mongoose"
 import { User } from "../models/userSchema.js"
 
 export const getAllUserController = async (req,res) => {
@@ -27,6 +26,7 @@ export const getAllUserController = async (req,res) => {
 }
 
 
+// Getting or fetching the user based on Id,
 export const getUserById = async (req,res) => {
     try {
         const id = req.params.id

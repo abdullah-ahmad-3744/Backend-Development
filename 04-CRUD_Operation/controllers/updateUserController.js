@@ -1,6 +1,5 @@
 import { User } from "../models/userSchema.js";
 
-
 export const updateUserController = async (req,res) => {
     try {
         // Fetching the id 
