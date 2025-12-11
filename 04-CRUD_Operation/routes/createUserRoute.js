@@ -18,7 +18,7 @@ router.post ('/createUser', createUserController)
 router.get( '/getUsers', getAllUserController)
 router.get('/getUsers/:id', getUserById)
 router.put('/updatedUser/:id',updateUserController)
-router.patch('/deleteUser/:id', deleteUserController)
+router.delete('/deleteUser/:id', deleteUserController)
 
 
 // exporting the Router
