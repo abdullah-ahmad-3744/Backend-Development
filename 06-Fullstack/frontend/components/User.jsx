@@ -1,24 +1,26 @@
-function User() {
+import { use } from 'react'
+import './User.css'
+function User(user) {
     return (
         <div className="user-container">
             <div className="name">
-                <p>name;</p>
+                <p>{user.user.name}</p>
             </div>
 
             <div className="email">
-                <p>Email : </p>
+                <p>{user.user.email}</p>
             </div>
 
             <div className="role">
-                <p>Role</p>
+                <p>{user.user.role}</p>
             </div>
 
             <div className="age">
-                <p>Age</p>
+                <p>{user.user.age}</p>
             </div>
 
             <div className="created-at">
-                <p>Created At </p>
+                <p>{user.user.createdAt}</p>
             </div>
         </div>
     )

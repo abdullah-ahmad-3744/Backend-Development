@@ -10,7 +10,7 @@ app.get('/', (req,res) => {
     res.send('<h1>This is Home Page : </h1>')
 })
 // Seding the users route
-app.get('/users', (req,res) => {
+app.get('/api/users', (req,res) => {
     res.send(users)
 })
 app.listen(PORT, () => {
