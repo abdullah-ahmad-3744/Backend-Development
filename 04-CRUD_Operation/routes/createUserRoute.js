@@ -8,6 +8,8 @@ import {getAllUserController} from '../controllers/getUserController.js'
 import { getUserById } from '../controllers/getUserController.js'
 // Import the controller for updating the user
 import { updateUserController } from '../controllers/updateUserController.js'
+// Import the controller for the delete request
+import { deleteUserController } from '../controllers/deleteUserController.js'
 
 // creating a Router from the express
 const router = express.Router()
@@ -16,6 +18,8 @@ router.post ('/createUser', createUserController)
 router.get( '/getUsers', getAllUserController)
 router.get('/getUsers/:id', getUserById)
 router.put('/updatedUser/:id',updateUserController)
+router.patch('/deleteUser/:id', deleteUserController)
+
 
 // exporting the Router
 export default router;
