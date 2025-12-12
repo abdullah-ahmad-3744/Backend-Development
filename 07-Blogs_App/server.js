@@ -15,7 +15,7 @@ import blogRoutes from './routes/blogRoutes.js'
 app.use(express.json());
 
 // Mounting the Routes 
-// app.use('/api/vi', blogRoutes)
+app.use('/api/v1', blogRoutes)
 
 
 // Defualt Route

@@ -1,6 +1,5 @@
 import mongoose, { mongo, Mongoose } from "mongoose";
 
-
 // Route Handler
 const postSchema = new mongoose.Schema(
     {
@@ -27,4 +26,5 @@ const postSchema = new mongoose.Schema(
         ]
     }
 )
-module.exports = mongoose.model('Post', postSchema)
+
+export default mongoose.model('Post', postSchema)
