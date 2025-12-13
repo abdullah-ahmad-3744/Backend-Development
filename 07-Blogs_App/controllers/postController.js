@@ -34,7 +34,7 @@ export const postCreationController = async (req, res) => {
 export const getAllPostsController = async (req, res) => {
     try {
         // Getting all posts
-        const posts = await Post.find()
+        const posts = await Post.find().populate('comments')
 
         // Sending response 
         res.json(
