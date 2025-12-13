@@ -1,5 +1,4 @@
-import mongoose, { mongo, Mongoose } from "mongoose";
-
+import mongoose from "mongoose"
 // Route Handler
 const postSchema = new mongoose.Schema(
     {
@@ -11,14 +10,14 @@ const postSchema = new mongoose.Schema(
             type: String,
             required : true
         },
-        postLikes : [
+        likes : [
             {
                 type : mongoose.Schema.Types.ObjectId,
                 ref  : 'Likes'
             }
         ],
         
-        postComments : [
+        comments : [
             {
                 type : mongoose.Schema.Types.ObjectId,
                 ref : 'Comments'
