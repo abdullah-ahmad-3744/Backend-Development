@@ -15,7 +15,7 @@ export const likePostController = async (req, res) => {
 
 
         // Updating the post after like
-        const updatedPost = await Post.findByIdAndUpdate(post, { $push: { likes: savedLikes._id } }, { new: true })
+        const updatedPost = await Post.findByIdAndUpdate(post, { $push: { likes: savedLikes._id } }, { new: true }).populate('likes').exec()
 
         res.json({
             updatedPost
