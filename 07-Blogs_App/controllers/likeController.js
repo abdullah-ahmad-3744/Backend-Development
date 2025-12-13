@@ -32,3 +32,35 @@ export const likePostController = async (req, res) => {
         )
     }
 }
+
+
+// Controller for unliking the post
+
+export const unlikePostController = async (req,res) => {
+    try {
+
+        const {post, like} = req.body
+
+        // Finding and removing the like from the like collection
+        const removedLike = await Like.findOneAndDelete({post: post, _id:like})
+
+        // Updating the post collection after like removing
+
+        const updatedPost = await Post.findByIdAndUpdate(post, {$pull : {likes: removedLike._id}}, {new:true})
+        // Sending response
+        res.status(200).json({
+            success:true,
+            post : updatedPost
+        })
+    } catch (error) {
+         console.log(error.message)
+        console.error(error.message)
+
+        res.status(500).json(
+            {
+                success: false,
+                message: 'Error in unliking a post'
+            }
+        )
+    }
+}
